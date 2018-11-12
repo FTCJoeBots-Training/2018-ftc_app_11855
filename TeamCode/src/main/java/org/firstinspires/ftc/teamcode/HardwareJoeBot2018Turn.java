@@ -421,7 +421,7 @@ public class HardwareJoeBot2018Turn
 
                 myOpMode.telemetry.addLine(">getAngle() returned >0");
                 myOpMode.telemetry.addLine(">>")
-                .addData("Cur: ", getAngle())
+                        .addData("Cur: ", getAngle())
                         .addData("Power:",power)
                         .addData("Difference:",difference)
                         .addData("Tar: ", degrees);
@@ -440,7 +440,7 @@ public class HardwareJoeBot2018Turn
 
                 myOpMode.telemetry.addLine(">getAngle() returned <0");
                 myOpMode.telemetry.addLine(">>")
-                .addData("Cur: ", getAngle())
+                        .addData("Cur: ", getAngle())
                         .addData("Power:",power)
                         .addData("Difference:",difference)
                         .addData("Tar: ", degrees);
