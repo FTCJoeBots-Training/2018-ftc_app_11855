@@ -78,7 +78,7 @@ public class HardwareJoeBot2018
     static final double INTAKE_MOTOR_POWER = 0.4;
 
     static final int LIFT_DOWN_POSITION = 0;
-    static final int LIFT_UP_POSITION = 2500;
+    static final int LIFT_UP_POSITION = 4000;
     static final double LIFT_POWER = 0.3;
 
 
@@ -621,8 +621,19 @@ public class HardwareJoeBot2018
         markerServo.setPosition(MARKER_OPEN_POS);
         myOpMode.sleep(1000);
         markerServo.setPosition(MARKER_CLOSE_POS);
-
     }
 
 
-}
+        public void strafesec (double power, double strafetime,boolean leftright)
+        {
+            ElapsedTime mytime = new ElapsedTime();
+            mytime.reset();
+            if (!leftright)
+                power = power * -1;
+            while (mytime.seconds() < strafetime) {
+                moveRobot(0, power, 0);
+            }
+        }
+    }
+
+
