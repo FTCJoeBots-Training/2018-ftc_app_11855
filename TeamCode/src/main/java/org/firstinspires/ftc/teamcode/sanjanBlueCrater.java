@@ -68,7 +68,7 @@ public class sanjanBlueCrater extends LinearOpMode {
         waitForStart();
 // Wait for the game to start (driver presses PLAY)
         waitForStart();
-
+       // robot.lowerLift();
         robot.raiseLift();
         sleep(2000); robot.lowerLift();
        robot.strafesec(.3,0.2,true);
