@@ -40,7 +40,7 @@ import com.qualcomm.robotcore.hardware.DcMotor;
  *
  */
 
-@Autonomous(name="Sanjan Auto Red Depot" , group="Testing")
+@Autonomous(name=" Auto Red Depot turn" , group="Testing")
 //@Disabled
 public class sanjanRedDepot extends LinearOpMode {
 
@@ -66,11 +66,23 @@ public class sanjanRedDepot extends LinearOpMode {
 
         // Wait for the game to start (driver presses PLAY)
         waitForStart();
+        robot.raiseLift();
+        robot.strafesec(0.5,0.5, false);
 
-        robot.rotate( -45, 0.5);
-        robot.moveInches(38, 0.5, 10);
-        robot.rotate( 90, 0.5);
-        robot.moveInches(38, 0.5, 10);
+        robot.moveInches( -3, .5,5);
+        robot.rotate(-45, 0.5 );
+        robot.moveInches(50,.5,10);
+        robot.rotate(81,.3);
+        robot.moveInches(38, 0.5, 5);
+
+        //robot drop marker
+
+        robot.dropMarker();
+
+        //goes backwards to the crater
+        //robot.rotate(1,.3);
+        //robot.moveInches(-61,.8,9);
+
     }
 
 }
