@@ -66,11 +66,10 @@ public class JUSTLanding extends LinearOpMode {
 
         // Wait for the game to start (driver presses PLAY)
         waitForStart();
-// Wait for the game to start (driver presses PLAY)
-        waitForStart();
+
 
         robot.raiseLift();
-       robot.strafesec(.5,0.5,false);
+        robot.strafesec(.5,0.5,false);
 
     }
 
