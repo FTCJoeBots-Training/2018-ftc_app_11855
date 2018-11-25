@@ -26,9 +26,7 @@
  * OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
  * OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
-
 package org.firstinspires.ftc.teamcode;
-
 import com.qualcomm.robotcore.eventloop.opmode.Autonomous;
 import com.qualcomm.robotcore.eventloop.opmode.LinearOpMode;
 import com.qualcomm.robotcore.hardware.DcMotor;
@@ -39,14 +37,11 @@ import com.qualcomm.robotcore.hardware.DcMotor;
  * in the 2018 HardwareJoeBots class.
  *
  */
-
-@Autonomous(name="Yimo Auto Red Crater" , group="Testing")
+@Autonomous(name="11855 AutoSamplingDepot", group="Testing")
 //@Disabled
-public class yimoCrater extends LinearOpMode {
-
+public class autoSamplingDepot extends LinearOpMode {
     /* Declare OpMode members. */
-    HardwareJoeBot2018      robot   = new HardwareJoeBot2018();
-
+    HardwareJoeBot2018     robot   = new HardwareJoeBot2018();
     @Override
     public void runOpMode() {
 
@@ -56,8 +51,8 @@ public class yimoCrater extends LinearOpMode {
          */
         robot.init(hardwareMap, this);
 
-        // Send telemetry message to signify robot waiting;
-        telemetry.addData("Status", "Resetting Encoders");    //
+        // Send telemetry message to signify robot waiting
+        telemetry.addData("Status", "Resetting Encoders");    //*
         telemetry.update();
 
         robot.setMode(DcMotor.RunMode.STOP_AND_RESET_ENCODER);
@@ -65,21 +60,40 @@ public class yimoCrater extends LinearOpMode {
         robot.setMode(DcMotor.RunMode.RUN_USING_ENCODER);
 
         // Wait for the game to start (driver presses PLAY)
+
         waitForStart();
 
-        robot.moveInches(40, 0.4, 15);
-        robot.rotate(-89,0.2);
+        //lower off of the lander
+        robot.raiseLift();
 
-        robot.moveInches(55, 0.4, 15);
-        /*robot.rotate(90,0.15);
 
-        robot.moveInches(12, 0.3, 15);
-        robot.rotate(90,0.15);
+        //strafe
+        robot.strafesec(.5,.5,false);
 
-        robot.moveInches(12, 0.3, 15);
-        robot.rotate(90,0.15);*/
+        robot.moveInches(-3,.5,5);
 
+        //Sampling
+
+        // goes to depot
+        //robot.rotate( -43, 0.5);
+        robot.moveInches(3, 0.5, 5);
+
+        //strafe
+
+        // moves to depot
+        //robot.rotate( -43, 0.5);
+        robot.moveInches(5, 0.5, 5);
+
+
+        //robot.dropMarker();
+        robot.dropMarker();
+
+        // goes backwards to crater
+        robot.rotate( 1, 0.3);
+        robot.moveInches(-61, .8, 9);
 
     }
-
 }
+
+
+
