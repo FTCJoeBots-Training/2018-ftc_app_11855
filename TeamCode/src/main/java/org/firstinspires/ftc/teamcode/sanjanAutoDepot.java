@@ -37,9 +37,9 @@ import com.qualcomm.robotcore.hardware.DcMotor;
  * in the 2018 HardwareJoeBots class.
  *
  */
-@Autonomous(name="11855 AutoCrater", group="Testing")
+@Autonomous(name="11855 AutoDepot", group="Testing")
 //@Disabled
-public class sanjanAutoCrater extends LinearOpMode {
+public class sanjanAutoDepot extends LinearOpMode {
     /* Declare OpMode members. */
     HardwareJoeBot2018     robot   = new HardwareJoeBot2018();
     @Override
@@ -65,27 +65,26 @@ public class sanjanAutoCrater extends LinearOpMode {
 
         //lower off of the lander
         robot.raiseLift();
-        //robot.moveInches(3,.3,5);
+
 
         //strafe
         robot.strafesec(.5,.5,false);
+
         robot.moveInches(-3,.5,5);
 
-
         // goes to depot
-        robot.moveInches(14, .40,5);
-        robot.rotate(-78, 0.40);
-        robot.moveInches( 51, 0.40,15);
-        robot.rotate(-48, 0.40);
-        robot.moveInches(30,0.40,10);
+        robot.rotate( -43    , 0.5);
+        robot.moveInches(43, 0.5, 10);
+        robot.rotate( 81, 0.3);
+        robot.moveInches(38, 0.5, 5);
 
 
         //robot.dropMarker();
         robot.dropMarker();
 
         // goes backwards to crater
-        robot.rotate( 3, 0.3);
-        robot.moveInches(-61, .8, 9);
+        robot.rotate( 1, 0.3);
+        robot.moveInches(-60, .8, 9);
 
 
 
