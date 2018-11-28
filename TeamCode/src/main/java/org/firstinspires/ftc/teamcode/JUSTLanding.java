@@ -40,9 +40,9 @@ import com.qualcomm.robotcore.hardware.DcMotor;
  *
  */
 
-@Autonomous(name=" Auto Red Depot turn" , group="Testing")
+@Autonomous(name=" JustLanding " , group="Testing")
 //@Disabled
-public class sanjanRedDepot extends LinearOpMode {
+public class JUSTLanding extends LinearOpMode {
 
     /* Declare OpMode members. */
     HardwareJoeBot2018      robot   = new HardwareJoeBot2018();
@@ -66,22 +66,10 @@ public class sanjanRedDepot extends LinearOpMode {
 
         // Wait for the game to start (driver presses PLAY)
         waitForStart();
+
+
         robot.raiseLift();
-        robot.strafesec(0.5,0.5, false);
-
-        robot.moveInches( -3, .5,5);
-        robot.rotate(-45, 0.5 );
-        robot.moveInches(50,.5,10);
-        robot.rotate(81,.3);
-        robot.moveInches(38, 0.5, 5);
-
-        //robot drop marker
-
-        robot.dropMarker();
-
-        //goes backwards to the crater
-        //robot.rotate(1,.3);
-        //robot.moveInches(-61,.8,9);
+        robot.strafesec(.5,0.5,false);
 
     }
 

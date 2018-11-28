@@ -99,9 +99,9 @@ public class HardwareJoeBot2018
             (WHEEL_DIAMETER_INCHES * 3.14159);
     static final double INTAKE_MOTOR_POWER = 0.4;
 
-    static final int LIFT_DOWN_POSITION = 0;
-    static final int LIFT_UP_POSITION = 4500;
-    static final double LIFT_POWER = 0.3;
+    static final int LIFT_DOWN_POSITION = -2900;
+    static final int LIFT_UP_POSITION = 9844;
+    static final double LIFT_POWER = 0.8;
 
 
     static final int ELBOW_STOW_POS = 0;
@@ -113,13 +113,19 @@ public class HardwareJoeBot2018
     static final double ELBOW_STD_POWER = 0.4;
     static final double SHOULDER_STD_POWER = 0.4;
 
-    static final double MARKER_OPEN_POS = 0.8;
-    static final double MARKER_CLOSE_POS = 0.3;
+    static final double MARKER_OPEN_POS = 0.5;
+    static final double MARKER_CLOSE_POS = 0.9;
 
     static final double MINERAL_OPEN_POS = 0.3;
     static final double MINERAL_CLOSE_POS = 0.8;
 
     private boolean bMineralDoorOpen = false;
+
+
+
+
+
+
 
 
     /* Constructor */
@@ -602,6 +608,7 @@ public class HardwareJoeBot2018
         liftMotor.setMode(DcMotor.RunMode.RUN_TO_POSITION);
         liftMotor.setTargetPosition(LIFT_UP_POSITION);
         liftMotor.setPower(LIFT_POWER);
+
         while (myOpMode.opModeIsActive() && liftMotor.isBusy()){
             myOpMode.telemetry.addLine("Raising Lift");
             myOpMode.telemetry.addData("Target Position: ", LIFT_UP_POSITION);

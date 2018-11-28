@@ -40,7 +40,7 @@ import com.qualcomm.robotcore.hardware.DcMotor;
  *
  */
 
-@Autonomous(name="lift test m" , group="Teasting")
+@Autonomous(name="lower lift" , group="Teasting")
 //@Disabled
 public class lifttest extends LinearOpMode {
 
@@ -67,8 +67,8 @@ public class lifttest extends LinearOpMode {
         // Wait for the game to start (driver presses PLAY)
         waitForStart();
  
-        robot.raiseLift();
-        sleep(2000); robot.lowerLift();
+
+         robot.lowerLift();
 
 
 
