@@ -65,7 +65,7 @@ public class sanjanAutoDepot extends LinearOpMode {
 
         //lower off of the lander
         robot.raiseLift();
-
+ 
 
         //strafe
         robot.strafesec(.5,.5,false);
