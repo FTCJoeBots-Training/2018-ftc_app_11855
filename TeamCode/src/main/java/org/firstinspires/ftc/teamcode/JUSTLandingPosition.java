@@ -40,9 +40,9 @@ import com.qualcomm.robotcore.hardware.DcMotor;
  *
  */
 
-@Autonomous(name=" Auto Blue Crater " , group="Testing")
+@Autonomous(name=" JustLandingPosition " , group="Testing")
 //@Disabled
-public class sanjanBlueCrater extends LinearOpMode {
+public class JUSTLandingPosition extends LinearOpMode {
 
     /* Declare OpMode members. */
     HardwareJoeBot2018      robot   = new HardwareJoeBot2018();
@@ -70,26 +70,8 @@ public class sanjanBlueCrater extends LinearOpMode {
         waitForStart();
 
         robot.raiseLift();
-        //
-        //robot.strafesec(.5,0.5,false);
-        //robot.moveInches(-3,0.5,5);
-        //turning might not work
-        //robot.rotate( -45, 0.5);
-        //robot.moveInches(50, 0.5, 10);
-        //robot.rotate( 81, 0.3);
-        // robot.moveInches(-49, 0.5, 5);
-        //robot.dropMarker();
-        //robot.rotate(1,.3);
-//robot.moveInches(61,.8,9);
-        robot.strafesec(.5,0.5,false);
-        robot.moveInches(12, 0.5, 5);
-        robot.strafesec(0.5, 0.2, true);
-        robot.lowerLift();
-        robot.rotate(-45, 0.5);
-        robot.moveInches(12, 0.5, 5);
-        robot.rotate(90,0.5);
-        robot.moveInches(60,0.5,5);
-        robot.moveInches(-70,0.5,5);
+       robot.strafesec(.5,0.5,false);
 
     }
+
 }
