@@ -26,16 +26,10 @@
  * OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
  * OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
-
 package org.firstinspires.ftc.teamcode;
-
 import com.qualcomm.robotcore.eventloop.opmode.Autonomous;
-import com.qualcomm.robotcore.eventloop.opmode.Disabled;
 import com.qualcomm.robotcore.eventloop.opmode.LinearOpMode;
 import com.qualcomm.robotcore.hardware.DcMotor;
-import com.qualcomm.robotcore.util.ElapsedTime;
-
-import org.firstinspires.ftc.robotcontroller.external.samples.HardwarePushbot;
 
 /**
  *
@@ -43,14 +37,11 @@ import org.firstinspires.ftc.robotcontroller.external.samples.HardwarePushbot;
  * in the 2018 HardwareJoeBots class.
  *
  */
-
-@Autonomous(name="Mecanum Square Testing", group="Testing")
+@Autonomous(name="11855 AutoDepot", group="Testing")
 //@Disabled
-public class autoTestMecanumMoveCommands extends LinearOpMode {
-
+public class sanjanAutoDepot extends LinearOpMode {
     /* Declare OpMode members. */
-    HardwareJoeBot2018Turn      robot   = new HardwareJoeBot2018Turn();
-
+    HardwareJoeBot2018     robot   = new HardwareJoeBot2018();
     @Override
     public void runOpMode() {
 
@@ -60,8 +51,8 @@ public class autoTestMecanumMoveCommands extends LinearOpMode {
          */
         robot.init(hardwareMap, this);
 
-        // Send telemetry message to signify robot waiting;
-        telemetry.addData("Status", "Resetting Encoders");    //
+        // Send telemetry message to signify robot waiting
+        telemetry.addData("Status", "Resetting Encoders");    //*
         telemetry.update();
 
         robot.setMode(DcMotor.RunMode.STOP_AND_RESET_ENCODER);
@@ -69,17 +60,33 @@ public class autoTestMecanumMoveCommands extends LinearOpMode {
         robot.setMode(DcMotor.RunMode.RUN_USING_ENCODER);
 
         // Wait for the game to start (driver presses PLAY)
+
         waitForStart();
 
-        robot.rotate(90,.3);
-        robot.moveInches(6, 0.3, 15);
-        robot.rotate(90,.3);
-        robot.moveInches(6, 0.3, 15);
-        robot.rotate(90,.3);
-        robot.moveInches(6, 0.5, 15);
-        robot.rotate(90,.3);
-        robot.moveInches(6, 0.5, 15);
+        //lower off of the lander
+        robot.raiseLift();
+ 
+
+        //strafe
+        robot.strafesec(.5,.5,false);
+
+        robot.moveInches(-3,.5,5);
+
+        // goes to depot
+        robot.rotate( -43    , 0.5);
+        robot.moveInches(43, 0.5, 10);
+        robot.rotate( 81, 0.3);
+        robot.moveInches(38, 0.5, 5);
+
+
+        //robot.dropMarker();
+        robot.dropMarker();
+
+        // goes backwards to crater
+        robot.rotate( 1, 0.3);
+        robot.moveInches(-60, .8, 9);
+
+
 
     }
-
 }
